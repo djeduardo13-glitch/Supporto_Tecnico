@@ -6,13 +6,16 @@
 // sostituiscono solo i testi; immagini, pulsanti e struttura restano quelli di dati.js.
 
 (function () {
-  const CONFIG = window.CONFIG || { nomeApp: "Centro Prodotti" };
+  const CONFIG = window.CONFIG || { nomeApp: "Supporto Tecnico - STEM" };
   const LINGUE = CONFIG.lingue || ["it"];
   const prodotti = {};      // id -> dati (italiano)
   const traduzioni = {};    // id -> { fr: {...} }
   const cartelle = {};      // id -> nome cartella
   let cartellaInCorso = null;
   let lingua = leggiLingua();
+
+  // Nome dell'app nella lingua attiva (config.js: testo unico oppure { it, en, fr, es })
+  const nomeApp = () => { const n = CONFIG.nomeApp; return typeof n === "string" ? n : (n[lingua] || n.it); };
 
   // ---------- Testi dell'interfaccia ----------
   const UI = {
@@ -206,21 +209,44 @@
     }
     const rigaAlta = Math.min(...Object.values(pl.pulsanti).map((q) => q[1]));
 
-    let svg = "";
-    for (const { pos: [x, y], nomi } of Object.values(perPosizione)) {
-      const sopra = y === rigaAlta;
+    // targhette: sopra per la riga alta, sotto per le altre
+    const fs = Math.max(15, W * 0.032);
+    const bh = Math.round(fs * 1.6);
+    const tag = Object.values(perPosizione).map(({ pos: [x, y], nomi }) => {
       const testo = nomi.join("·");
-      const fs = Math.max(15, W * 0.032);
-      const bh = Math.round(fs * 1.6);
+      const sopra = y === rigaAlta;
       const bw = testo.length <= 1 ? bh - 2 : fs + testo.length * fs * 0.62;
-      const by = sopra ? y - r - bh - 6 : y + r + 6;
+      return { x, y, testo, sopra, bw, cx: x, by: sopra ? y - r - bh - 6 : y + r + 6 };
+    });
+    // se due targhette della stessa fila si sovrappongono, si scostano di lato (restando nell'immagine)
+    const gap = 6, m = 2;
+    for (const fila of [tag.filter((q) => q.sopra), tag.filter((q) => !q.sopra)]) {
+      fila.sort((a, b) => a.x - b.x);
+      for (let giro = 0; giro < 30; giro++) {
+        let mosso = false;
+        for (let i = 1; i < fila.length; i++) {
+          const a = fila[i - 1], b = fila[i];
+          const sov = a.cx + a.bw / 2 + gap - (b.cx - b.bw / 2);
+          if (sov > 0.5) { a.cx -= sov / 2; b.cx += sov / 2; mosso = true; }
+        }
+        for (const q of fila) {
+          const c = Math.min(Math.max(q.cx, m + q.bw / 2), W - m - q.bw / 2);
+          if (c !== q.cx) { q.cx = c; mosso = true; }
+        }
+        if (!mosso) break;
+      }
+    }
+
+    let svg = "";
+    for (const { x, y, testo, sopra, bw, cx, by } of tag) {
       const ly1 = sopra ? by + bh : y + r + 2, ly2 = sopra ? y - r - 2 : by;
+      const lx1 = sopra ? cx : x, lx2 = sopra ? x : cx;
       svg += `
         <circle class="alone" cx="${x}" cy="${y}" r="${r + 4}"/>
         <circle class="anello" cx="${x}" cy="${y}" r="${r + 2}"/>
-        <line class="filo" x1="${x}" y1="${ly1}" x2="${x}" y2="${ly2}"/>
-        <rect class="targhetta" x="${x - bw / 2}" y="${by}" width="${bw}" height="${bh}" rx="4"/>
-        <text class="lettera" x="${x}" y="${by + bh / 2 + 1}" style="font-size:${fs}px">${esc(testo)}</text>`;
+        <line class="filo" x1="${lx1}" y1="${ly1}" x2="${lx2}" y2="${ly2}"/>
+        <rect class="targhetta" x="${cx - bw / 2}" y="${by}" width="${bw}" height="${bh}" rx="4"/>
+        <text class="lettera" x="${cx}" y="${by + bh / 2 + 1}" style="font-size:${fs}px">${esc(testo)}</text>`;
     }
     const alt = `${t("pulsantiera")}, ${t("pulsanti")} ${evidenziati.map((l) => nomeTasto(p, l)).join(", ")}`;
     return `
@@ -447,7 +473,7 @@
     const lista = ordinati();
     $("#contenuto").innerHTML = `
       <div class="hero hero-home">
-        <h1>${esc(CONFIG.nomeApp)}</h1>
+        <h1>${esc(nomeApp())}</h1>
         <p class="hero-sotto">${t("homeSotto")}</p>
       </div>
       <div class="griglia-card">
@@ -690,6 +716,8 @@
   // ---------- Lingua ----------
   function applicaLingua() {
     document.documentElement.lang = lingua;
+    document.title = nomeApp();
+    $("#appTitle").textContent = nomeApp();
     $("#cerca").placeholder = t("cerca");
     $("#cerca").setAttribute("aria-label", t("cerca"));
     $("#menuBtn").setAttribute("aria-label", t("menu"));
@@ -745,8 +773,6 @@
   }
 
   function avvia() {
-    document.title = CONFIG.nomeApp;
-    $("#appTitle").textContent = CONFIG.nomeApp;
     disegnaLingue();
     applicaLingua();
     window.addEventListener("hashchange", () => route());

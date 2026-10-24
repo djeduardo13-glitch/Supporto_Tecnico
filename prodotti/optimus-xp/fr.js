@@ -2,7 +2,7 @@
 registraTraduzione("optimus-xp", "fr", {
   descrizione: "Réglages depuis le pupitre et schéma électrique.",
   fonte: "Manuel OPTIMUS-XP R01 · §5.5 Réglages",
-  nomiTasti: { "Molleggio": "Suspension", "Luce": "Lumière", "Su": "Haut", "Giù": "Bas" },
+  nomiTasti: { "Molleggio": "Suspension", "Freccia su": "Flèche haut", "LED": "LED", "Freccia giù": "Flèche bas" },
   sezioni: [
     {
       titolo: "Auto-apprentissage des fins de course",

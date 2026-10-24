@@ -2,7 +2,7 @@
 registraTraduzione("eden04-xp", "en", {
   descrizione: "Loading height adjustment and programming with Spyke and Sherpa Slim.",
   fonte: "EDEN04-XP manual · §5.5.1 Adjusting loading height",
-  nomiTasti: { "Su": "Up", "Giù": "Down" },
+  nomiTasti: { "Stop": "Stop", "Orizzontale": "Horizontal", "Molleggio": "Suspension", "Freccia su": "Up arrow", "LED": "LED", "Piedi su": "Feet up", "Testa su": "Head up", "Freccia giù": "Down arrow" },
   sezioni: [
     {
       titolo: "Loading height",

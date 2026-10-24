@@ -2,12 +2,13 @@
 // Fonte: Manuale EDEN-BS8 R01 IT, §5.5 Regolazioni (pag. 38-39)
 //
 // "pulsantiera": la foto usata in TUTTE le istruzioni.
-//   pulsanti = lettera del manuale -> [x, y] del centro del pulsante sulla foto (pixel).
-//   F è lo stesso pulsante di A (nel manuale cambia solo la lettera).
+//   pulsanti = nome del tasto -> [x, y] del centro del pulsante sulla foto (pixel).
+//   Nel manuale i tasti sono indicati con lettere: A e F = Molleggio, B = Testa su, C = Orizzontale,
+//   D = Piedi su, E = Freccia su, G = Freccia giù. L'icona batteria è solo una spia (nessun nome).
 //
 // Tipo di sezione "istruzione":
 //   condizioni: [{ testo, tipo: "senza" | "con" | "info" }]
-//   passi: [{ num, testo, pulsanti: ["A","B"], modo: "insieme2s" | "insieme" | "singolo" | "oppure", esito, immagine }]
+//   passi: [{ num, testo, pulsanti: ["Testa su", "Piedi su"], modo: "insieme2s" | "insieme" | "singolo" | "oppure", esito, immagine }]
 //   attenzione: testo nel riquadro di avviso
 
 registraProdotto({
@@ -26,13 +27,14 @@ registraProdotto({
     altezza: 213,
     raggio: 31,
     pulsanti: {
-      A: [220, 75],
-      B: [220, 138],
-      C: [148, 75],
-      D: [148, 138],
-      E: [292, 75],
-      F: [220, 75],
-      G: [292, 138]
+      "Stop":        [78, 75],
+      "Orizzontale": [148, 75],
+      "Molleggio":   [220, 75],
+      "Freccia su":  [292, 75],
+      "LED":         [78, 138],
+      "Piedi su":    [148, 138],
+      "Testa su":    [220, 138],
+      "Freccia giù": [292, 138]
     }
   },
 
@@ -48,7 +50,7 @@ registraProdotto({
         {
           num: "1",
           testo: "Avviare il ciclo di autoapprendimento del piano.",
-          pulsanti: ["A", "B"],
+          pulsanti: ["Molleggio", "Testa su"],
           modo: "insieme2s"
         }
       ],
@@ -66,7 +68,7 @@ registraProdotto({
         {
           num: "1",
           testo: "Memorizzare la posizione orizzontale.",
-          pulsanti: ["C", "D"],
+          pulsanti: ["Orizzontale", "Piedi su"],
           modo: "insieme2s",
           esito: "Segnale acustico: posizione orizzontale memorizzata."
         }
@@ -83,13 +85,13 @@ registraProdotto({
         {
           num: "1",
           testo: "Portare il piano a un'altezza di molleggio compresa tra 200 e 220 mm.",
-          pulsanti: ["E"],
+          pulsanti: ["Freccia su"],
           modo: "singolo"
         },
         {
           num: "2",
           testo: "Memorizzare l'altezza di molleggio.",
-          pulsanti: ["E", "F"],
+          pulsanti: ["Freccia su", "Molleggio"],
           modo: "insieme2s",
           esito: "Segnale acustico: altezza di molleggio memorizzata."
         }
@@ -108,13 +110,13 @@ registraProdotto({
         {
           num: "4a",
           testo: "Attivare la modalità manuale, che consente di movimentare il piano anche in assenza di barella.",
-          pulsanti: ["C", "B"],
+          pulsanti: ["Orizzontale", "Testa su"],
           modo: "insieme2s"
         },
         {
           num: "4b",
           testo: "Inclinare il piano fino a portare l'imbocco dello SPARK-FS 2 cm al di sotto della sfera dello Spark.",
-          pulsanti: ["B", "D"],
+          pulsanti: ["Testa su", "Piedi su"],
           modo: "oppure",
           immagine: "img/spark-fs-2cm.png",
           didascalia: "Imbocco SPARK-FS 2 cm sotto la sfera dello Spark"
@@ -122,14 +124,14 @@ registraProdotto({
         {
           num: "4c",
           testo: "Memorizzare l'inclinazione del piano.",
-          pulsanti: ["C", "E"],
+          pulsanti: ["Orizzontale", "Freccia su"],
           modo: "insieme2s",
           esito: "Segnale acustico: inclinazione memorizzata."
         },
         {
           num: "4d",
           testo: "Per uscire senza memorizzare la programmazione manuale.",
-          pulsanti: ["C", "G"],
+          pulsanti: ["Orizzontale", "Freccia giù"],
           modo: "insieme",
           tipoPasso: "alternativa"
         }

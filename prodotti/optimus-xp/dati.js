@@ -20,10 +20,10 @@ registraProdotto({
     altezza: 237,
     raggio: 30,
     pulsanti: {
-      "Molleggio": [175, 93],
-      "Luce":      [175, 156.5],
-      "Su":        [325, 93],
-      "Giù":       [325, 156.5]
+      "Molleggio":   [175, 93],
+      "Freccia su":  [325, 93],
+      "LED":         [175, 156.5],
+      "Freccia giù": [325, 156.5]
     }
   },
 
@@ -35,8 +35,8 @@ registraProdotto({
       passi: [
         {
           num: "1",
-          testo: "Mantenere premuti simultaneamente i tasti Su e Giù fino all'emissione del segnale acustico e all'accensione del LED giallo.",
-          pulsanti: ["Su", "Giù"],
+          testo: "Mantenere premuti simultaneamente i tasti Freccia su e Freccia giù fino all'emissione del segnale acustico e all'accensione del LED giallo.",
+          pulsanti: ["Freccia su", "Freccia giù"],
           modo: "finoBeep",
           esito: "Il supporto esegue una corsa completa in discesa e successivamente in salita, per acquisire le posizioni dei due finecorsa."
         }
@@ -53,13 +53,13 @@ registraProdotto({
         {
           num: "1",
           testo: "Portare il supporto all'altezza di molleggio desiderata.",
-          pulsanti: ["Su"],
+          pulsanti: ["Freccia su"],
           modo: "singolo"
         },
         {
           num: "2",
           testo: "Memorizzare l'altezza di molleggio.",
-          pulsanti: ["Molleggio", "Su"],
+          pulsanti: ["Molleggio", "Freccia su"],
           modo: "insieme",
           esito: "Segnale acustico: altezza di molleggio memorizzata."
         }

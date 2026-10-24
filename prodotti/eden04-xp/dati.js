@@ -2,7 +2,8 @@
 // Fonte: Manuale EDEN04-XP §5.5.1 Regolazione altezza di carico (pag. 37-38)
 //
 // "pulsantiera": immagine ricostruita in SVG, usata in tutte le istruzioni con i tasti.
-//   pulsanti = nome del tasto -> [x, y] del centro del pulsante sull'immagine.
+//   pulsanti = nome del tasto -> [x, y] del centro del pulsante sull'immagine (stessi tasti dell'Eden-BS8;
+//   l'icona batteria è solo una spia). Le lettere A, B, H nei testi sono le etichette delle foto.
 
 registraProdotto({
   id: "eden04-xp",
@@ -20,8 +21,14 @@ registraProdotto({
     altezza: 302,
     raggio: 38,
     pulsanti: {
-      "Su":  [415, 111],
-      "Giù": [415, 196]
+      "Stop":        [117, 111],
+      "Orizzontale": [216, 111],
+      "Molleggio":   [316, 111],
+      "Freccia su":  [415, 111],
+      "LED":         [117, 196],
+      "Piedi su":    [216, 196],
+      "Testa su":    [316, 196],
+      "Freccia giù": [415, 196]
     }
   },
 
@@ -51,7 +58,7 @@ registraProdotto({
         {
           num: "4",
           testo: "Memorizzare la posizione desiderata premendo simultaneamente le due frecce della pulsantiera di comando.",
-          pulsanti: ["Su", "Giù"],
+          pulsanti: ["Freccia su", "Freccia giù"],
           modo: "insieme"
         }
       ]

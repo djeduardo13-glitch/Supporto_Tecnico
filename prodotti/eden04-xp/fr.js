@@ -2,7 +2,7 @@
 registraTraduzione("eden04-xp", "fr", {
   descrizione: "Réglage de la hauteur de chargement et programmation avec Spyke et Sherpa Slim.",
   fonte: "Manuel EDEN04-XP · §5.5 Réglage de la hauteur de chargement",
-  nomiTasti: { "Su": "Haut", "Giù": "Bas" },
+  nomiTasti: { "Stop": "Stop", "Orizzontale": "Horizontal", "Molleggio": "Suspension", "Freccia su": "Flèche haut", "LED": "LED", "Piedi su": "Pieds haut", "Testa su": "Tête haut", "Freccia giù": "Flèche bas" },
   sezioni: [
     {
       titolo: "Hauteur de chargement",

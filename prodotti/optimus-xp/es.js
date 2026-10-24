@@ -2,7 +2,7 @@
 registraTraduzione("optimus-xp", "es", {
   descrizione: "Regulaciones desde la botonera y esquema eléctrico.",
   fonte: "Manual OPTIMUS-XP R01 · §5.5 Regulaciones",
-  nomiTasti: { "Molleggio": "Amortiguación", "Luce": "Luz", "Su": "Subir", "Giù": "Bajar" },
+  nomiTasti: { "Molleggio": "Amortiguación", "Freccia su": "Flecha arriba", "LED": "LED", "Freccia giù": "Flecha abajo" },
   sezioni: [
     {
       titolo: "Autoaprendizaje de los finales de carrera",

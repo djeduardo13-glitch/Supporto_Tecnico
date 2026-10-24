@@ -1,7 +1,13 @@
 // Impostazioni generali dell'app.
-// Quando avrai deciso il nome, cambialo qui.
+// Qui si cambiano nome dell'app, email e lingue.
 window.CONFIG = {
-  nomeApp: "Raccolta Prodotti STEM",
+  // Nome dell'app nelle varie lingue (cambia con la lingua scelta).
+  nomeApp: {
+    it: "Supporto Tecnico - STEM",
+    en: "Technical Support - STEM",
+    fr: "Support technique - STEM",
+    es: "Soporte técnico - STEM"
+  },
   azienda: "STEM S.r.l.",
   email: "customerservice@stem.it",
   // Lingue disponibili: la prima è quella predefinita.

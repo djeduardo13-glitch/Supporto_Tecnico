@@ -3,6 +3,7 @@
 registraTraduzione("eden-bs8", "en", {
   descrizione: "Adjustments from the control panel: automatic learning, horizontal position, suspension height and loading tilt.",
   fonte: "EDEN-BS8 manual R01 · §5.5 Adjustments",
+  nomiTasti: { "Stop": "Stop", "Orizzontale": "Horizontal", "Molleggio": "Suspension", "Freccia su": "Up arrow", "LED": "LED", "Piedi su": "Feet up", "Testa su": "Head up", "Freccia giù": "Down arrow" },
   sezioni: [
     {
       titolo: "Automatic learning",

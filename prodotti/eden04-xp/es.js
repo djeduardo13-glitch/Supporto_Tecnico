@@ -2,7 +2,7 @@
 registraTraduzione("eden04-xp", "es", {
   descrizione: "Regulación de la altura de carga y programación con Spyke y Sherpa Slim.",
   fonte: "Manual EDEN04-XP · §5.5.1 Regulación de la altura de carga",
-  nomiTasti: { "Su": "Subir", "Giù": "Bajar" },
+  nomiTasti: { "Stop": "Stop", "Orizzontale": "Horizontal", "Molleggio": "Amortiguación", "Freccia su": "Flecha arriba", "LED": "LED", "Piedi su": "Subir lado pies", "Testa su": "Subir lado cabeza", "Freccia giù": "Flecha abajo" },
   sezioni: [
     {
       titolo: "Altura de carga",

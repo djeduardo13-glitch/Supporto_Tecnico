@@ -2,7 +2,7 @@
 registraTraduzione("optimus-xp", "en", {
   descrizione: "Adjustments from the control panel and wiring diagram.",
   fonte: "OPTIMUS-XP manual R01 · §5.5 Adjustments",
-  nomiTasti: { "Molleggio": "Suspension", "Luce": "Light", "Su": "Up", "Giù": "Down" },
+  nomiTasti: { "Molleggio": "Suspension", "Freccia su": "Up arrow", "LED": "LED", "Freccia giù": "Down arrow" },
   sezioni: [
     {
       titolo: "Automatic learning of end stops",

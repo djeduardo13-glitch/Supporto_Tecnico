@@ -4,6 +4,7 @@
 registraTraduzione("eden-bs8", "fr", {
   descrizione: "Réglages depuis le pupitre : auto-apprentissage, position horizontale, hauteur de suspension et inclinaison du chargement.",
   fonte: "Manuel EDEN-BS8 R01 · §5.5 Réglages",
+  nomiTasti: { "Stop": "Stop", "Orizzontale": "Horizontal", "Molleggio": "Suspension", "Freccia su": "Flèche haut", "LED": "LED", "Piedi su": "Pieds haut", "Testa su": "Tête haut", "Freccia giù": "Flèche bas" },
   sezioni: [
     {
       titolo: "Auto-apprentissage",

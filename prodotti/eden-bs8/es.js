@@ -3,6 +3,7 @@
 registraTraduzione("eden-bs8", "es", {
   descrizione: "Reglajes desde la botonera: autoaprendizaje, posición horizontal, altura de amortiguación e inclinación de carga.",
   fonte: "Manual EDEN-BS8 R01 · §5.5 Reglajes",
+  nomiTasti: { "Stop": "Stop", "Orizzontale": "Horizontal", "Molleggio": "Amortiguación", "Freccia su": "Flecha arriba", "LED": "LED", "Piedi su": "Subir lado pies", "Testa su": "Subir lado cabeza", "Freccia giù": "Flecha abajo" },
   sezioni: [
     {
       titolo: "Autoaprendizaje",
