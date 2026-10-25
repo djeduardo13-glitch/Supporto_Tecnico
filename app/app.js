@@ -91,7 +91,7 @@
   const $ = (s) => document.querySelector(s);
   const esc = (x) => String(x ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const br = (x) => esc(x).replace(/\n/g, "<br>");
-  const slug = (x) => String(x || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const slug = (x) => String(x || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
   function leggiLingua() {
     let l = null;
@@ -136,6 +136,9 @@
   const ICONE = {
     senza: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg>',
     con: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>',
+    // stato barella (condizioni tipo "con"/"senza"): barella stilizzata + bollino ✓ / ✕
+    barellaCon: '<svg viewBox="0 0 40 28" aria-hidden="true"><rect x="2" y="11" width="27" height="4" rx="2"/><path d="M5.5 11V8h6.5v3M8.5 15v5.5M23 15v5.5"/><circle cx="8.5" cy="23.3" r="2.3"/><circle cx="23" cy="23.3" r="2.3"/><circle class="bollino" cx="32" cy="8" r="7.2"/><path class="segno" d="M28.6 8.2l2.3 2.3 4.4-4.6"/></svg>',
+    barellaSenza: '<svg viewBox="0 0 40 28" aria-hidden="true"><rect x="2" y="11" width="27" height="4" rx="2"/><path d="M5.5 11V8h6.5v3M8.5 15v5.5M23 15v5.5"/><circle cx="8.5" cy="23.3" r="2.3"/><circle cx="23" cy="23.3" r="2.3"/><circle class="bollino" cx="32" cy="8" r="7.2"/><path class="segno" d="M29.2 5.2l5.6 5.6M34.8 5.2l-5.6 5.6"/></svg>',
     info: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>',
     tempo: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9.5 2.5h5"/></svg>',
     beep: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>',
@@ -270,7 +273,7 @@
         break;
       case "finoBeep":
         tasti = ps.map(tasto).join('<span class="piu">+</span>');
-        nota = `<span class="chip chip-tempo">${ICONE.beep}${t("finoBeep")}</span>`;
+        nota = `<span class="chip chip-tempo">${ICONE.tempo}${t("finoBeep")}</span>`;   // altoparlante solo sull'esito
         break;
       case "insieme":
         tasti = ps.map(tasto).join('<span class="piu">+</span>');
@@ -285,9 +288,14 @@
     return `<div class="azione"><span class="azione-label">${t("premi")}</span>${tasti}${nota}</div>`;
   }
 
+  // Condizioni "con"/"senza" = stato della barella: sempre per prime, a tutta larghezza e ben evidenti.
+  const eBarella = (c) => c.tipo === "con" || c.tipo === "senza";
+  const iconaCond = (c) => eBarella(c) ? (c.tipo === "con" ? ICONE.barellaCon : ICONE.barellaSenza) : (ICONE[c.tipo] || ICONE.info);
+  const ordinaCond = (s) => (s.condizioni || []).filter(eBarella).concat((s.condizioni || []).filter((c) => !eBarella(c)));
+
   function condizioniHTML(s) {
-    const cond = (s.condizioni || []).map((c) =>
-      `<li class="cond cond-${esc(c.tipo || "info")}">${ICONE[c.tipo] || ICONE.info}${esc(c.testo)}</li>`).join("");
+    const cond = ordinaCond(s).map((c) =>
+      `<li class="cond cond-${esc(c.tipo || "info")}${eBarella(c) ? " cond-barella" : ""}">${iconaCond(c)}<span>${esc(c.testo)}</span></li>`).join("");
     return cond ? `<ul class="condizioni"><li class="cond-titolo">${t("primaDi")}</li>${cond}</ul>` : "";
   }
 
@@ -311,7 +319,7 @@
           <p>${br(ps.testo)}</p>
           ${ps.nota ? `<p class="nota-passo"><strong>${t("nota")}:</strong> ${br(ps.nota)}</p>` : ""}
           ${azioneHTML(p, ps)}
-          ${ps.esito ? `<div class="esito">${ICONE.beep}<span>${esc(ps.esito)}</span></div>` : ""}
+          ${ps.esito ? `<div class="esito">${ICONE[ps.esitoIcona] || ICONE.beep}<span>${esc(ps.esito)}</span></div>` : ""}
         </div>
         ${conMedia ? `<div class="passo-media">
           ${conTasti ? pulsantieraHTML(p, base, ps.pulsanti) : ""}
@@ -522,7 +530,7 @@
       <div class="schede">
         ${sezioni.map((s, i) => {
           const n = s.tipo === "istruzione" ? ++nIstr : 0;
-          const cond = (s.condizioni || []).slice(0, 2).map((c) => `<span class="mini cond-${esc(c.tipo || "info")}">${ICONE[c.tipo] || ICONE.info}${esc(c.testo)}</span>`).join("");
+          const cond = ordinaCond(s).slice(0, 2).map((c) => `<span class="mini cond-${esc(c.tipo || "info")}${eBarella(c) ? " cond-barella" : ""}">${iconaCond(c)}${esc(c.testo)}</span>`).join("");
           return `
           <a class="scheda-card" href="${s.tipo === "collegamento" ? `#/${s.vai}` : `#/${encodeURIComponent(id)}/s${i + 1}`}">
             ${iconaScheda(s, n)}
