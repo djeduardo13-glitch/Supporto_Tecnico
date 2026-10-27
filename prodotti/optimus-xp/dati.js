@@ -50,6 +50,7 @@ registraProdotto({
       sottotitolo: "Impostazione e memorizzazione dell'altezza di molleggio.",
       tipo: "istruzione",
       condizioni: [
+        { testo: "Con barella agganciata", tipo: "con" },
         { testo: "Valore consigliato: 200 mm complessivi, misurati dal piano in acciaio inox al pavimento", tipo: "info" }
       ],
       passi: [

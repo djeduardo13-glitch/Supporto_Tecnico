@@ -12,6 +12,7 @@ registraTraduzione("r-3l-xp", "es", {
     {
       titolo: "Altura de carga",
       sottotitolo: "Ajuste y memorización de la inclinación del soporte para la carga.",
+      condizioni: [{ testo: "Sin camilla fijada" }],
       passi: [
         { testo: "Extraiga completamente el plano extraíble." },
         { testo: "Incline el soporte hasta la posición deseada." },

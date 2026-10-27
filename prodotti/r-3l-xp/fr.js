@@ -30,6 +30,9 @@ registraTraduzione("r-3l-xp", "fr", {
     {
       titolo: "Hauteur de chargement",
       sottotitolo: "Réglage et mémorisation de l'inclinaison du support pour le chargement.",
+      condizioni: [
+        { testo: "Sans brancard fixé" }
+      ],
       passi: [
         { testo: "Sortir complètement le plateau extractible." },
         { testo: "Incliner le support jusqu'à la position souhaitée." },

@@ -7,6 +7,7 @@ registraTraduzione("eden04-xp", "en", {
     {
       titolo: "Loading height",
       sottotitolo: "Adjusting and memorising the stretcher loading height.",
+      condizioni: [{ testo: "No stretcher attached to the stretcher tray" }],
       passi: [
         { testo: "Pull the release lever (A) of the extractable tray.", nota: "this way, the device is positioned at the bottom to allow the extractable tray to come out." },
         { testo: "Pull the lever (A) again and accompany the exit of the tray until it engages in the \"fully extended\" position." },

@@ -37,6 +37,9 @@ registraProdotto({
       titolo: "Altezza di carico",
       sottotitolo: "Regolazione e memorizzazione dell'altezza di carico della barella.",
       tipo: "istruzione",
+      condizioni: [
+        { testo: "Senza barella agganciata", tipo: "senza" }
+      ],
       passi: [
         {
           num: "1",

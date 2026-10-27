@@ -16,7 +16,7 @@ registraTraduzione("optimus-xp", "en", {
     {
       titolo: "Suspension height",
       sottotitolo: "Setting and storing the suspension height.",
-      condizioni: [{ testo: "Recommended value: 200 mm total, measured from the stainless steel platform to the floor" }],
+      condizioni: [{ testo: "Stretcher attached" }, { testo: "Recommended value: 200 mm total, measured from the stainless steel platform to the floor" }],
       passi: [
         { testo: "Reach the desired suspension height." },
         { testo: "Store the suspension height.", esito: "Audible signal: suspension height stored." }

@@ -12,6 +12,7 @@ registraTraduzione("r-3l-xp", "en", {
     {
       titolo: "Loading height",
       sottotitolo: "Setting and storing the support tilt for loading.",
+      condizioni: [{ testo: "No stretcher attached" }],
       passi: [
         { testo: "Fully extend the extractable tray." },
         { testo: "Tilt the support to the desired position." },

@@ -49,6 +49,9 @@ registraProdotto({
       titolo: "Altezza di carico",
       sottotitolo: "Impostazione e memorizzazione dell'inclinazione del supporto per il carico.",
       tipo: "istruzione",
+      condizioni: [
+        { testo: "Senza barella agganciata", tipo: "senza" }
+      ],
       passi: [
         {
           num: "1",

@@ -16,7 +16,7 @@ registraTraduzione("optimus-xp", "es", {
     {
       titolo: "Altura de amortiguación",
       sottotitolo: "Ajuste y memorización de la altura de amortiguación.",
-      condizioni: [{ testo: "Valor recomendado: 200 mm en total, medidos desde la superficie de acero inoxidable hasta el suelo" }],
+      condizioni: [{ testo: "Con camilla fijada" }, { testo: "Valor recomendado: 200 mm en total, medidos desde la superficie de acero inoxidable hasta el suelo" }],
       passi: [
         { testo: "Alcance la altura de amortiguación deseada." },
         { testo: "Memorice la altura de amortiguación.", esito: "Señal acústica: altura de amortiguación memorizada." }

@@ -16,7 +16,7 @@ registraTraduzione("optimus-xp", "fr", {
     {
       titolo: "Hauteur de suspension",
       sottotitolo: "Réglage et mémorisation de la hauteur de suspension.",
-      condizioni: [{ testo: "Valeur recommandée : 200 mm au total, mesurés du plateau en acier inoxydable au plancher" }],
+      condizioni: [{ testo: "Avec brancard fixé" }, { testo: "Valeur recommandée : 200 mm au total, mesurés du plateau en acier inoxydable au plancher" }],
       passi: [
         { testo: "Atteindre la hauteur de suspension souhaitée." },
         { testo: "Mémoriser la hauteur de suspension.", esito: "Signal sonore : hauteur de suspension mémorisée." }

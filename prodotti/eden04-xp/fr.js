@@ -7,6 +7,7 @@ registraTraduzione("eden04-xp", "fr", {
     {
       titolo: "Hauteur de chargement",
       sottotitolo: "Réglage et mémorisation de la hauteur de chargement du brancard.",
+      condizioni: [{ testo: "Sans brancard fixé au plateau" }],
       passi: [
         { testo: "Tirer le levier de décrochage (A) du plateau sortant.", nota: "de cette manière, le dispositif se place en bas pour que le plateau sortant puisse sortir." },
         { testo: "Tirer à nouveau le levier (A) et accompagner la sortie du plateau jusqu'à l'accrochage en position « tout sorti »." },

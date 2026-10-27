@@ -7,6 +7,7 @@ registraTraduzione("eden04-xp", "es", {
     {
       titolo: "Altura de carga",
       sottotitolo: "Regulación y memorización de la altura de carga de la camilla.",
+      condizioni: [{ testo: "Sin camilla fijada a la superficie" }],
       passi: [
         { testo: "Tire de la palanca de desenganche (A) del plano extraíble.", nota: "de esta forma el dispositivo se coloca bajado para que pueda salir el plano extraíble." },
         { testo: "Tire de nuevo de la palanca (A) y acompañe la salida del plano hasta el enganche en posición «toda extraída»." },
