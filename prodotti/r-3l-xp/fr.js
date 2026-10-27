@@ -20,6 +20,7 @@ registraTraduzione("r-3l-xp", "fr", {
       titolo: "Auto-apprentissage",
       sottotitolo: "Cycle d'auto-apprentissage du plateau.",
       condizioni: [
+        { testo: "Sans brancard fixé" },
         { testo: "Plateau fermé" }
       ],
       passi: [

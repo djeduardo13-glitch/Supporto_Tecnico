@@ -6,10 +6,11 @@ registraTraduzione("optimus-xp", "en", {
   sezioni: [
     {
       titolo: "Automatic learning of end stops",
-      sottotitolo: "Automatic detection of the upper and lower end stops.",
+      sottotitolo: "Full downward and then upward travel to detect the lower and upper end stops.",
+      condizioni: [{ testo: "No stretcher attached" }],
       passi: [{
-        testo: "Press and hold both buttons simultaneously until an audible signal is emitted and the LED turns yellow.",
-        esito: "The support lowers completely and then rises fully to locate the two end stops."
+        testo: "Start the automatic learning cycle.",
+        esito: "Audible signal and yellow LED on: automatic learning cycle started."
       }]
     },
     {

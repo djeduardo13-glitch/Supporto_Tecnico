@@ -6,10 +6,11 @@ registraTraduzione("optimus-xp", "fr", {
   sezioni: [
     {
       titolo: "Auto-apprentissage des fins de course",
-      sottotitolo: "Détection automatique de la fin de course haute et de la fin de course basse.",
+      sottotitolo: "Course complète en descente puis en montée pour détecter les fins de course basse et haute.",
+      condizioni: [{ testo: "Sans brancard fixé" }],
       passi: [{
-        testo: "Maintenir enfoncés simultanément les deux boutons jusqu'à l'émission d'un signal sonore et jusqu'à ce que la LED devienne jaune.",
-        esito: "La table s'abaisse complètement puis se soulève complètement pour trouver les deux fins de course."
+        testo: "Lancer le cycle d'auto-apprentissage.",
+        esito: "Signal sonore et LED jaune allumée : cycle d'auto-apprentissage lancé."
       }]
     },
     {

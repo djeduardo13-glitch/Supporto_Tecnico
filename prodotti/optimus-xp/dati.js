@@ -30,15 +30,18 @@ registraProdotto({
   sezioni: [
     {
       titolo: "Autoapprendimento finecorsa",
-      sottotitolo: "Rilevamento automatico dei finecorsa superiore e inferiore.",
+      sottotitolo: "Corsa completa in discesa e poi in salita per acquisire i finecorsa inferiore e superiore.",
       tipo: "istruzione",
+      condizioni: [
+        { testo: "Senza barella agganciata", tipo: "senza" }
+      ],
       passi: [
         {
           num: "1",
-          testo: "Mantenere premuti simultaneamente i tasti Freccia su e Freccia giù fino all'emissione del segnale acustico e all'accensione del LED giallo.",
+          testo: "Avviare il ciclo di autoapprendimento.",
           pulsanti: ["Freccia su", "Freccia giù"],
           modo: "finoBeep",
-          esito: "Il supporto esegue una corsa completa in discesa e successivamente in salita, per acquisire le posizioni dei due finecorsa."
+          esito: "Segnale acustico e LED giallo acceso: ciclo di autoapprendimento avviato."
         }
       ]
     },

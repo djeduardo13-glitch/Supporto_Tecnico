@@ -6,7 +6,7 @@ registraTraduzione("r-3l-xp", "es", {
     {
       titolo: "Autoaprendizaje",
       sottotitolo: "Ciclo de autoaprendizaje del plano.",
-      condizioni: [{ testo: "Plano cerrado" }],
+      condizioni: [{ testo: "Sin camilla fijada" }, { testo: "Plano cerrado" }],
       passi: [{ testo: "Inicie el ciclo de autoaprendizaje." }]
     },
     {

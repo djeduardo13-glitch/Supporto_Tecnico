@@ -6,7 +6,7 @@ registraTraduzione("r-3l-xp", "en", {
     {
       titolo: "Automatic learning",
       sottotitolo: "Automatic learning cycle of the platform.",
-      condizioni: [{ testo: "Platform closed" }],
+      condizioni: [{ testo: "No stretcher attached" }, { testo: "Platform closed" }],
       passi: [{ testo: "Start the automatic learning cycle." }]
     },
     {

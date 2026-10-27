@@ -33,6 +33,7 @@ registraProdotto({
       sottotitolo: "Ciclo di autoapprendimento del piano.",
       tipo: "istruzione",
       condizioni: [
+        { testo: "Senza barella agganciata", tipo: "senza" },
         { testo: "Piano chiuso", tipo: "info" }
       ],
       passi: [

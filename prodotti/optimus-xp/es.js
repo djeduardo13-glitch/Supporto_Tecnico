@@ -6,10 +6,11 @@ registraTraduzione("optimus-xp", "es", {
   sezioni: [
     {
       titolo: "Autoaprendizaje de los finales de carrera",
-      sottotitolo: "Detección automática del final de carrera alto y del final de carrera bajo.",
+      sottotitolo: "Recorrido completo de bajada y luego de subida para detectar los finales de carrera inferior y superior.",
+      condizioni: [{ testo: "Sin camilla fijada" }],
       passi: [{
-        testo: "Mantenga pulsados simultáneamente los dos botones hasta que se emita una señal acústica y el led se ponga amarillo.",
-        esito: "El soporte baja completamente y luego se eleva completamente para ubicar los dos finales de carrera."
+        testo: "Inicie el ciclo de autoaprendizaje.",
+        esito: "Señal acústica y led amarillo encendido: ciclo de autoaprendizaje iniciado."
       }]
     },
     {
