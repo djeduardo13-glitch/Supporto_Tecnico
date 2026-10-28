@@ -61,6 +61,14 @@ registraTraduzione("spark", "fr", {
         { fase: "Sortie", testo: "Sélectionner le bouton Engrenage pour revenir à la page d'accueil." },
         { testo: "Sélectionner la flèche Retour." }
       ]
+    },
+    {
+      titolo: "Pieds",
+      sottotitolo: "Kits de montage des pieds : côté tête et côté pieds.",
+      ricambi: [
+        { nome: "Kit de montage du pied côté tête", lato: "Côté tête", nota: "Côté opposé à l'écran · pied sans levier" },
+        { nome: "Kit de montage du pied côté pieds", lato: "Côté pieds", nota: "Côté de l'écran · pied avec levier" }
+      ]
     }
   ]
 });

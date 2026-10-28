@@ -316,6 +316,21 @@ mark { background: #ffe27a; color: #000; border-radius: 2px; }
 .doc:hover { border-color: var(--blu); }
 .doc svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 
+/* Ricambi: foto unica (in italiano) + legenda tradotta */
+.ric-foto { margin: 0 0 16px; }
+.ric-foto .zoomabile { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--bordo); border-radius: 12px; background: #fff; overflow: hidden; cursor: zoom-in; }
+.ric-foto .zoomabile:hover, .ric-foto .zoomabile:focus-visible { border-color: var(--blu); box-shadow: var(--ombra); outline: none; }
+.ric-foto img { display: block; width: 100%; height: auto; }
+.ricambi { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.ricambio { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 14px 16px; background: #fff; border: 1px solid var(--bordo); border-left: 6px solid var(--c); border-radius: 12px; }
+.ric-lato { font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--c); padding: 3px 10px; border-radius: 8px; margin-bottom: 4px; }
+.ric-codice { font-size: 1.15rem; color: var(--c); letter-spacing: .02em; }
+.ric-nome { font-weight: 600; color: var(--testo); }
+.ric-nota { color: var(--tenue); font-size: .88rem; }
+.ric-it { margin-top: 4px; font-size: .78rem; color: var(--tenue); }
+.ric-it::before { content: "IT · "; font-weight: 700; }
+@media (max-width: 600px) { .ric-foto .foglio-zoom { font-size: 0; gap: 0; padding: 6px; right: 6px; bottom: 6px; } }
+
 /* ---------- Visore a schermo intero ---------- */
 body.visore-aperto { overflow: hidden; }
 .visore { position: fixed; inset: 0; z-index: 100; background: #0d1620; display: flex; flex-direction: column; }

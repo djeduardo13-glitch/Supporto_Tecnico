@@ -43,6 +43,14 @@ registraTraduzione("spark", "es", {
         { fase: "Salida", testo: "Seleccione el botón Engranaje para volver a la página de inicio." },
         { testo: "Seleccione la flecha Atrás." }
       ]
+    },
+    {
+      titolo: "Pies",
+      sottotitolo: "Kits de montaje de los pies: lado cabeza y lado pies.",
+      ricambi: [
+        { nome: "Kit de montaje del pie lado cabeza", lato: "Lado cabeza", nota: "Lado opuesto a la pantalla · pie sin palanca" },
+        { nome: "Kit de montaje del pie lado pies", lato: "Lado pies", nota: "Lado de la pantalla · pie con palanca" }
+      ]
     }
   ]
 });

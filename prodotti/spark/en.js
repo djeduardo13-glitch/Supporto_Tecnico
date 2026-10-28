@@ -43,6 +43,14 @@ registraTraduzione("spark", "en", {
         { fase: "Exit", testo: "Select the Gear button to return to the start page." },
         { testo: "Select the Back arrow." }
       ]
+    },
+    {
+      titolo: "Feet",
+      sottotitolo: "Foot assembly kits: head side and foot side.",
+      ricambi: [
+        { nome: "Foot assembly kit, head side", lato: "Head side", nota: "Side opposite the display · foot without lever" },
+        { nome: "Foot assembly kit, foot side", lato: "Foot side", nota: "Display side · foot with lever" }
+      ]
     }
   ]
 });

@@ -9,7 +9,7 @@ registraProdotto({
   nome: "Spark",
   categoria: "Spark",
   descrizione: "Azzeramento macchina e configurazione dell'altezza di carico dal display.",
-  aggiornato: "2026-10-23",
+  aggiornato: "2026-10-28",
   fonte: "Foglio istruzioni zero macchina · IS000039 R00",
   copertina: "img/copertina.webp",
 
@@ -69,6 +69,18 @@ registraProdotto({
 
         { fase: "Uscita", num: "8", testo: "Selezionare il pulsante Ingranaggio per tornare alla pagina iniziale.", immagini: ["img/carico-8.jpg"] },
         { num: "9", testo: "Selezionare la freccia Indietro.", immagini: ["img/carico-9.jpg"] }
+      ]
+    },
+    {
+      // RICAMBI: compare nel blocco "Ricambi" della pagina prodotto.
+      // La foto è UNICA e in italiano per tutte le lingue; la traduzione è nella legenda (en/fr/es.js).
+      titolo: "Piedi",
+      sottotitolo: "Kit di montaggio dei piedi: lato testa e lato piedi.",
+      tipo: "ricambi",
+      immagine: "img/ricambi-piedi.jpg",
+      ricambi: [
+        { codice: "KITR000137", nome: "Kit montaggio piede lato testa", lato: "Lato testa", nota: "Lato opposto al display · piede senza leva", colore: "#014584", etichettaFoto: "LATO TESTA · Kit montaggio piede lato testa" },
+        { codice: "KITR00105", nome: "Kit montaggio piede lato piedi", lato: "Lato piedi", nota: "Lato del display · piede con leva", colore: "#E67814", etichettaFoto: "LATO PIEDI · Kit montaggio piede lato piedi" }
       ]
     }
   ]

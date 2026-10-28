@@ -31,7 +31,8 @@
       zoomPiu: "Ingrandisci", zoomMeno: "Riduci", adatta: "Adatta allo schermo", documenti: "Documenti",
       schede: "Schede istruzioni", passo: "Passo", di: "di", passo1: "passo", passiN: "passi", fogliN: "fogli",
       doc1: "documento", docN: "documenti", precedente: "Indietro", successivo: "Avanti", fine: "Fine", tuttiPassi: "Tutti i passi",
-      nota: "Nota", soloIt: "Disponibile solo in italiano", apriScheda: "Apri", nonUff: "Traduzione non ufficiale, da verificare", scaricaPdf: "Scarica PDF", schedaIstr: "Scheda istruzioni", assistenza: "Assistenza clienti", pagina: "Pagina"
+      nota: "Nota", soloIt: "Disponibile solo in italiano", apriScheda: "Apri", nonUff: "Traduzione non ufficiale, da verificare", scaricaPdf: "Scarica PDF", schedaIstr: "Scheda istruzioni", assistenza: "Assistenza clienti", pagina: "Pagina",
+      ricambi: "Ricambi", codice1: "codice", codiciN: "codici"
     },
     fr: {
       prodotti: "Produits", cerca: "Rechercher dans tous les produits…", nessunProdotto: "Aucun produit",
@@ -45,7 +46,8 @@
       zoomPiu: "Agrandir", zoomMeno: "Réduire", adatta: "Ajuster à l'écran", documenti: "Documents",
       schede: "Fiches d'instructions", passo: "Étape", di: "sur", passo1: "étape", passiN: "étapes", fogliN: "feuilles",
       doc1: "document", docN: "documents", precedente: "Précédent", successivo: "Suivant", fine: "Terminé", tuttiPassi: "Toutes les étapes",
-      nota: "Note", soloIt: "Disponible uniquement en italien", apriScheda: "Ouvrir", nonUff: "Traduction non officielle, à vérifier", scaricaPdf: "Télécharger le PDF", schedaIstr: "Fiche d'instructions", assistenza: "Service client", pagina: "Page"
+      nota: "Note", soloIt: "Disponible uniquement en italien", apriScheda: "Ouvrir", nonUff: "Traduction non officielle, à vérifier", scaricaPdf: "Télécharger le PDF", schedaIstr: "Fiche d'instructions", assistenza: "Service client", pagina: "Page",
+      ricambi: "Pièces détachées", codice1: "référence", codiciN: "références"
     },
     es: {
       prodotti: "Productos", cerca: "Buscar en todos los productos…", nessunProdotto: "Ningún producto",
@@ -59,7 +61,8 @@
       zoomPiu: "Ampliar", zoomMeno: "Reducir", adatta: "Ajustar a la pantalla", documenti: "Documentos",
       schede: "Fichas de instrucciones", passo: "Paso", di: "de", passo1: "paso", passiN: "pasos", fogliN: "hojas",
       doc1: "documento", docN: "documentos", precedente: "Anterior", successivo: "Siguiente", fine: "Terminar", tuttiPassi: "Todos los pasos",
-      nota: "Nota", soloIt: "Disponible solo en italiano", apriScheda: "Abrir", nonUff: "Traducción no oficial, pendiente de revisión", scaricaPdf: "Descargar PDF", schedaIstr: "Ficha de instrucciones", assistenza: "Atención al cliente", pagina: "Página"
+      nota: "Nota", soloIt: "Disponible solo en italiano", apriScheda: "Abrir", nonUff: "Traducción no oficial, pendiente de revisión", scaricaPdf: "Descargar PDF", schedaIstr: "Ficha de instrucciones", assistenza: "Atención al cliente", pagina: "Página",
+      ricambi: "Recambios", codice1: "código", codiciN: "códigos"
     },
     en: {
       prodotti: "Products", cerca: "Search all products…", nessunProdotto: "No products",
@@ -73,7 +76,8 @@
       zoomPiu: "Zoom in", zoomMeno: "Zoom out", adatta: "Fit to screen", documenti: "Documents",
       schede: "Instruction sheets", passo: "Step", di: "of", passo1: "step", passiN: "steps", fogliN: "sheets",
       doc1: "document", docN: "documents", precedente: "Back", successivo: "Next", fine: "Done", tuttiPassi: "All steps",
-      nota: "Note", soloIt: "Available in Italian only", apriScheda: "Open", nonUff: "Unofficial translation, to be checked", scaricaPdf: "Download PDF", schedaIstr: "Instruction sheet", assistenza: "Customer service", pagina: "Page"
+      nota: "Note", soloIt: "Available in Italian only", apriScheda: "Open", nonUff: "Unofficial translation, to be checked", scaricaPdf: "Download PDF", schedaIstr: "Instruction sheet", assistenza: "Customer service", pagina: "Page",
+      ricambi: "Spare parts", codice1: "part number", codiciN: "part numbers"
     }
   };
   const t = (k) => (UI[lingua] && UI[lingua][k]) || UI.it[k] || k;
@@ -151,6 +155,7 @@
     pdf: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h4"/></svg>',
     scarica: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>',
     link: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>',
+    ricambi: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a1.8 1.8 0 0 0 2.6 2.6l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.5 2.5-2.3-.6-.6-2.3z"/></svg>',
     indietro: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>',
     freccia: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>'
   };
@@ -378,6 +383,28 @@
     return `<section class="sezione-istr" id="${idSez}">${testaSezione(s, ICONE.pdf)}<div class="docs">${file}</div></section>`;
   }
 
+  // Ricambi: una foto unica (sempre in italiano, non si traduce) + legenda dei codici tradotta sotto.
+  //   ricambi: [{ codice, nome, lato, nota, colore, etichettaFoto }] — "etichettaFoto" = scritta sulla foto,
+  //   mostrata tra parentesi nelle altre lingue per collegare la legenda alla foto.
+  function sezioneRicambi(s, idSez, base) {
+    const foto = s.immagine ? `
+      <figure class="ric-foto">
+        <button type="button" class="zoomabile" data-src="${esc(base + s.immagine)}" data-titolo="${esc(s.titolo)}" aria-label="${t("ingrandisci")}">
+          <img src="${esc(base + s.immagine)}" alt="${esc(s.titolo)}">
+          <span class="foglio-zoom">${ICONE.zoom}${t("ingrandisci")}</span>
+        </button>
+      </figure>` : "";
+    const voci = (s.ricambi || []).map((r) => `
+      <li class="ricambio" style="--c:${esc(r.colore || "#004682")}">
+        ${r.lato ? `<span class="ric-lato">${esc(r.lato)}</span>` : ""}
+        <strong class="ric-codice">${esc(r.codice)}</strong>
+        <span class="ric-nome">${esc(r.nome)}</span>
+        ${r.nota ? `<span class="ric-nota">${esc(r.nota)}</span>` : ""}
+        ${lingua !== "it" && r.etichettaFoto ? `<span class="ric-it" lang="it">${esc(r.etichettaFoto)}</span>` : ""}
+      </li>`).join("");
+    return `<section class="sezione-istr" id="${idSez}">${testaSezione(s, ICONE.ricambi)}${foto}<ul class="ricambi">${voci}</ul></section>`;
+  }
+
   // ---------- Visore immagini (zoom e trascinamento) ----------
   function apriVisore(src, titolo) {
     const v = document.createElement("div");
@@ -498,12 +525,13 @@
   }
 
   const iconaScheda = (s, n) => s.tipo === "istruzione" ? `<span class="sch-num">${n}</span>`
-    : `<span class="sch-num sez-icona">${s.tipo === "schema" ? ICONE.schema : s.tipo === "avvisi" ? ICONE.importante : s.tipo === "collegamento" ? ICONE.link : ICONE.pdf}</span>`;
+    : `<span class="sch-num sez-icona">${s.tipo === "schema" ? ICONE.schema : s.tipo === "avvisi" ? ICONE.importante : s.tipo === "collegamento" ? ICONE.link : s.tipo === "ricambi" ? ICONE.ricambi : ICONE.pdf}</span>`;
 
   function infoScheda(s) {
     if (s.tipo === "istruzione") { const n = (s.passi || []).length; return `${n} ${n === 1 ? t("passo1") : t("passiN")}`; }
     if (s.tipo === "schema") { const n = (s.fogli || []).length; return `${n} ${t("fogliN")}`; }
     if (s.tipo === "documenti") { const n = (s.file || []).length; return `${n} ${n === 1 ? t("doc1") : t("docN")}`; }
+    if (s.tipo === "ricambi") { const n = (s.ricambi || []).length; return `${n} ${n === 1 ? t("codice1") : t("codiciN")}`; }
     if (s.tipo === "collegamento") { const q = prodotti[(s.vai || "").split("/")[0]]; return q ? esc(q.nome) : ""; }
     return "";
   }
@@ -518,6 +546,25 @@
     // Intestazione: a destra la foto della sola pulsantiera (se c'è), altrimenti la copertina.
     const heroPuls = !!(p.pulsantiera && p.pulsantiera.immagine);
     const heroImg = heroPuls ? p.pulsantiera.immagine : p.copertina;
+    // le schede tengono il numero di sezione originale (link #/id/sN); i ricambi vanno in un blocco a parte
+    const tutte = sezioni.map((s, i) => ({ s, i, n: s.tipo === "istruzione" ? ++nIstr : 0 }));
+    const scheda = ({ s, i, n }) => {
+      const cond = ordinaCond(s).slice(0, 2).map((c) => `<span class="mini cond-${esc(c.tipo || "info")}${eBarella(c) ? " cond-barella" : ""}">${iconaCond(c)}${esc(c.testo)}</span>`).join("");
+      return `
+      <a class="scheda-card" href="${s.tipo === "collegamento" ? `#/${s.vai}` : `#/${encodeURIComponent(id)}/s${i + 1}`}">
+        ${iconaScheda(s, n)}
+        <span class="sch-corpo">
+          <strong>${esc(s.titolo)}${s.etichetta ? ` <span class="etichetta">${esc(s.etichetta)}</span>` : ""}</strong>
+          ${s.sottotitolo ? `<span class="sch-sotto">${esc(s.sottotitolo)}</span>` : ""}
+          ${cond ? `<span class="sch-cond">${cond}</span>` : ""}
+          ${s._manca ? `<span class="sch-cond"><span class="mini">${t("soloIt")}</span></span>` : ""}
+          ${s._nonUff ? `<span class="sch-cond"><span class="mini">${t("nonUff")}</span></span>` : ""}
+        </span>
+        <span class="sch-info">${infoScheda(s)}${ICONE.freccia}</span>
+      </a>`;
+    };
+    const schede = tutte.filter((x) => x.s.tipo !== "ricambi");
+    const ricambi = tutte.filter((x) => x.s.tipo === "ricambi");
     $("#contenuto").innerHTML = `
       ${p._manca ? `<div class="avviso-lingua">${t("traduzioneMancante")}</div>` : ""}
       <div class="hero ${heroImg ? "hero-foto" : ""}">
@@ -526,24 +573,12 @@
         </div>
         ${heroImg ? `<img class="hero-img ${heroPuls ? "hero-puls" : ""}" src="${esc(base + heroImg)}" alt="${esc(heroPuls ? `${t("pulsantiera")} ${p.nome}` : p.nome)}">` : ""}
       </div>
-      <h2 class="titolo-blocco">${t("schede")}</h2>
+      ${schede.length || !ricambi.length ? `<h2 class="titolo-blocco">${t("schede")}</h2>
       <div class="schede">
-        ${sezioni.map((s, i) => {
-          const n = s.tipo === "istruzione" ? ++nIstr : 0;
-          const cond = ordinaCond(s).slice(0, 2).map((c) => `<span class="mini cond-${esc(c.tipo || "info")}${eBarella(c) ? " cond-barella" : ""}">${iconaCond(c)}${esc(c.testo)}</span>`).join("");
-          return `
-          <a class="scheda-card" href="${s.tipo === "collegamento" ? `#/${s.vai}` : `#/${encodeURIComponent(id)}/s${i + 1}`}">
-            ${iconaScheda(s, n)}
-            <span class="sch-corpo">
-              <strong>${esc(s.titolo)}${s.etichetta ? ` <span class="etichetta">${esc(s.etichetta)}</span>` : ""}</strong>
-              ${s.sottotitolo ? `<span class="sch-sotto">${esc(s.sottotitolo)}</span>` : ""}
-              ${cond ? `<span class="sch-cond">${cond}</span>` : ""}
-              ${s._manca ? `<span class="sch-cond"><span class="mini">${t("soloIt")}</span></span>` : ""}
-              ${s._nonUff ? `<span class="sch-cond"><span class="mini">${t("nonUff")}</span></span>` : ""}
-            </span>
-            <span class="sch-info">${infoScheda(s)}${ICONE.freccia}</span>
-          </a>`; }).join("") || `<p class="vuoto">${t("nessunaSezione")}</p>`}
-      </div>`;
+        ${schede.map(scheda).join("") || `<p class="vuoto">${t("nessunaSezione")}</p>`}
+      </div>` : ""}
+      ${ricambi.length ? `<h2 class="titolo-blocco">${t("ricambi")}</h2>
+      <div class="schede">${ricambi.map(scheda).join("")}</div>` : ""}`;
   }
 
   function vistaScheda(id, sNum, pNum) {
@@ -568,7 +603,8 @@
 
     if (s.tipo !== "istruzione") {
       const corpo = s.tipo === "avvisi" ? sezioneAvvisi(s, "x") : s.tipo === "schema" ? sezioneSchema(s, "x", base)
-        : s.tipo === "documenti" ? sezioneDocumenti(s, "x", base) : sezioneGenerica(s, si, base);
+        : s.tipo === "documenti" ? sezioneDocumenti(s, "x", base) : s.tipo === "ricambi" ? sezioneRicambi(s, "x", base)
+        : sezioneGenerica(s, si, base);
       $("#contenuto").innerHTML = `${indietro}<div class="scheda scheda-semplice">${testa}${s._manca ? `<div class="avviso-lingua">${t("soloIt")}</div>` : ""}${s._nonUff ? `<div class="avviso-lingua">${t("nonUff")}</div>` : ""}${corpo.replace(/<header class="sez-head">[\s\S]*?<\/header>/, "")}</div>`;
       return;
     }
@@ -690,6 +726,7 @@
     add(s.attenzione);
     (s.avvisi || []).forEach((a) => add(a.testo));
     (s.fogli || []).forEach((f) => add(`${f.titolo} · ${f.descrizione}`));
+    (s.ricambi || []).forEach((x) => add([x.codice, x.nome, x.lato, x.nota].filter(Boolean).join(" · ")));
     return r;
   }
 
